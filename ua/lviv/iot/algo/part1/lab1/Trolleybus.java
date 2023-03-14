@@ -58,14 +58,14 @@ public class Trolleybus {
     }
 
     public static void main(String[] args) {
-        Trolleybus[] trolleybuses = new Trolleybus[4];
-        trolleybuses[0] = new Trolleybus();
-        trolleybuses[1] = new Trolleybus(100, 126, "Naukova", 50, 25, 10);
-        trolleybuses[2] = Trolleybus.getInstance();
-        trolleybuses[3] = Trolleybus.getInstance();
+        Trolleybus[] trolleybuses = {
+                new Trolleybus(),
+                new Trolleybus(100, 126, "Naukova", 50, 25, 10),
+                Trolleybus.getInstance(),
+                Trolleybus.getInstance()};
 
-        for (int i = 0; i < trolleybuses.length; i++) {
-            System.out.println(trolleybuses[i].toString());
+        for (Trolleybus trolleybus : trolleybuses) {
+            System.out.println(trolleybus);
         }
     }
 
