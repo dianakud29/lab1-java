@@ -1,40 +1,30 @@
-package ua.lviv.iot.algo.part1.lab1;
-
-import lombok.AllArgsConstructor;
-import lombok.NoArgsConstructor;
+package ua.lviv.iot.algo.part1.lab2;
 import lombok.Getter;
 import lombok.Setter;
+import lombok.NoArgsConstructor;
 import lombok.ToString;
-
-@AllArgsConstructor
 @Getter
 @Setter
 @NoArgsConstructor
-@ToString
-public class Trolleybus {
-    private int id = 100;
+@ToString(callSuper=true)
+
+class Trolleybus extends Transport {
     private int routeNumber;
     private String currentStop;
-    private int maxSpeed;
     private int capacity;
     private int passengers;
 
-    private static Trolleybus instance;
-
-    public static Trolleybus getInstance() {
-        if (instance == null) {
-            instance = new Trolleybus();
-        }
-        return instance;
-    }
-
-    public Trolleybus(int routeNumber, String currentStop, int maxSpeed, int capacity) {
-        this.id = id;
+    public Trolleybus(int routeNumber, String currentStop, int capacity, int passengers, int maxQuantityOfPassengers, int id, int maxSpeed) {
+        super(id, maxQuantityOfPassengers, maxSpeed);
         this.routeNumber = routeNumber;
         this.currentStop = currentStop;
-        this.maxSpeed = maxSpeed;
         this.capacity = capacity;
         this.passengers = 0;
+    }
+
+    @Override
+    public void accelerate(int speed) {
+        setMaxSpeed(Math.min(speed, 50));
     }
 
     public void stop() {
@@ -56,18 +46,5 @@ public class Trolleybus {
             passengers--;
         }
     }
-
-    public static void main(String[] args) {
-        Trolleybus[] trolleybuses = {
-                new Trolleybus(),
-                new Trolleybus(100, 126, "Naukova", 50, 25, 10),
-                Trolleybus.getInstance(),
-                Trolleybus.getInstance()};
-
-        for (Trolleybus trolleybus : trolleybuses) {
-            System.out.println(trolleybus);
-        }
-    }
-
 }
 
