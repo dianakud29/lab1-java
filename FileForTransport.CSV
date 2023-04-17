@@ -1,0 +1,8 @@
+name, id, maxSpeed, maxQuantityOfPassengers, numberOfDoors, trunkVolume, maxLoad
+Car,4,70,5,4,500,230
+name, id, maxSpeed, maxQuantityOfPassengers, seating
+Tram,45,90,50,25
+name, id, maxSpeed, maxQuantityOfPassengers, carriage
+Train,19,80,100,6
+name, id, maxSpeed, maxQuantityOfPassengers, routeNumber, currentStop, capacity, passengers
+Trolleybus,6,35,60,40,Naukova,27,0
