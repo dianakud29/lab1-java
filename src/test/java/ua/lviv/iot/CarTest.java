@@ -7,7 +7,7 @@ public class CarTest {
 
     @Test
     public void testConstructor() {
-        Car car = new Car(4, 4, 500, 230, 200, 5);
+        Car car = new Car("Car",4, 4, 500, 230, 200, 5);
         Assertions.assertEquals(4, car.getId());
         Assertions.assertEquals(4, car.getNumberOfDoors());
         Assertions.assertEquals(500, car.getTrunkVolume());
@@ -18,7 +18,7 @@ public class CarTest {
 
     @Test
     public void testAccelerate() {
-        Car car = new Car(4, 4, 500, 230, 200, 5);
+        Car car = new Car("Car", 4, 4, 500, 230, 200, 5);
         car.accelerate(80);
         Assertions.assertEquals(80, car.getMaxSpeed());
         car.accelerate(300);

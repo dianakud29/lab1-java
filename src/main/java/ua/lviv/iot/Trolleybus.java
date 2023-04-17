@@ -14,8 +14,8 @@ class Trolleybus extends Transport {
     private int capacity;
     private int passengers;
 
-    public Trolleybus(int routeNumber, String currentStop, int capacity, int passengers, int maxQuantityOfPassengers, int id, int maxSpeed) {
-        super(id, maxQuantityOfPassengers, maxSpeed);
+    public Trolleybus(String name, int routeNumber, String currentStop, int capacity, int passengers, int maxQuantityOfPassengers, int id, int maxSpeed) {
+        super(name, id, maxQuantityOfPassengers, maxSpeed);
         this.routeNumber = routeNumber;
         this.currentStop = currentStop;
         this.capacity = capacity;
@@ -46,5 +46,15 @@ class Trolleybus extends Transport {
             passengers--;
         }
     }
+
+
+    public String getHeaders(){
+        return HEADER + ", routeNumber" + ", currentStop" + ", capacity" + ", passengers";
+    }
+
+    public String toCSV() {
+        return super.toCSV() + "," + routeNumber + "," + currentStop + "," + capacity + "," + passengers;
+    }
+
 }
 

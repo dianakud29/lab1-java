@@ -4,6 +4,9 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 public class TransportManager {
+    List<Transport> getTransports(){
+        return transports;
+    }
   public List<Transport> findAllWithSpeedGreaterThan(final int speed){
       return transports.stream()
               .filter(transport -> transport.getMaxSpeed() > speed)

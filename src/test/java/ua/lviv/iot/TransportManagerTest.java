@@ -22,14 +22,14 @@ public class TransportManagerTest {
     void setUp() {
         transportManager = new TransportManager();
 
-        tram1 = new Tram(45, 35, 25, 50);
-        tram2 = new Tram(56, 95, 17, 45);
-        train1 = new Train(19, 80, 6, 100);
-        train2 = new Train(34, 70, 5, 80);
-        trolleybus1 = new Trolleybus(40, "Naukova", 27, 0, 50, 6, 50);
-        trolleybus2 = new Trolleybus(2, "Stryyska", 30, 15, 42, 5, 50);
-        car1 = new Car(4, 4,500, 230, 200, 5);
-        car2 = new Car(8, 8,600, 260, 65, 8);
+        tram1 = new Tram("Tram",45, 35, 25, 50);
+        tram2 = new Tram("Tram", 56, 95, 17, 45);
+        train1 = new Train("Train", 19, 80, 6, 100);
+        train2 = new Train("Train", 34, 70, 5, 80);
+        trolleybus1 = new Trolleybus("Trolleybus", 40, "Naukova", 27, 0, 50, 6, 50);
+        trolleybus2 = new Trolleybus("Trolleybus", 2, "Stryyska", 30, 15, 42, 5, 50);
+        car1 = new Car("Car", 4, 4,500, 230, 200, 5);
+        car2 = new Car("Car",8, 8,600, 260, 65, 8);
     }
 
     @Test
